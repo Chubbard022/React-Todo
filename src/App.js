@@ -4,6 +4,10 @@ import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 
 
+const todoArray = [
+  {newTodo:'firstTodo'},
+]
+
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -11,31 +15,22 @@ class App extends React.Component {
   constructor(){
     super();
     this.state={
-      todo:[
-
-      ],
-
+      todo:todoArray,
       newTodo:'',
     }
   }
 
   handleChange = event =>{
-    console.log(event.target)
-    this.setState({task: event.target.value})
+    console.log(event.target.value)
+    this.setState({[event.target.name]: event.target.value})
   }
 
 updateTodo = event =>{
   event.preventDefault();
-
-  const newTodo = [
-    ...this.state.todo,
-    { task:this.state.newTodo, id:Date.now(), completed:false } 
-  ]
-  
-
-  this.state({ 
-    todo:newTodo,
-    newTodo:''
+  const newTodoArray = {newTodo:this.state.newTodo}
+   
+  this.setState({ 
+    todo: [...this.state.todo,newTodoArray]
   })
 }
  
@@ -43,12 +38,11 @@ updateTodo = event =>{
   render() {
     return (
       <div>
-        <h2>ToDo List</h2>
-
-        <TodoList 
-          todoList={this.state.todo} 
-        />
-
+            {
+      this.state.todo.map((todoItem,index)=>{
+              <TodoList key={index} todoItem={todoList}/>
+                })
+              }
         <TodoForm 
           handleChange={this.handleChange} 
           newTodo={this.state.newTodo}
