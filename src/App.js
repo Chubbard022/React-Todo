@@ -21,16 +21,16 @@ class App extends React.Component {
   }
 
   handleChange = event =>{
-    console.log(event.target.value)
     this.setState({[event.target.name]: event.target.value})
   }
 
 updateTodo = event =>{
   event.preventDefault();
   const newTodoArray = {newTodo:this.state.newTodo}
-   
+   console.log(this.state)
   this.setState({ 
-    todo: [...this.state.todo,newTodoArray]
+    todo: [...this.state.todo,newTodoArray],
+    newTodo: ''
   })
 }
  
@@ -38,11 +38,12 @@ updateTodo = event =>{
   render() {
     return (
       <div>
-            {
-      this.state.todo.map((todoItem,index)=>{
-              <TodoList key={index} todoItem={todoList}/>
-                })
-              }
+        <h1>Add a ToDo!</h1>
+          {
+            this.state.todo.map((todoItem,index)=>{
+            return <TodoList key={index} todoProp={todoItem}/>
+            })
+          }
         <TodoForm 
           handleChange={this.handleChange} 
           newTodo={this.state.newTodo}

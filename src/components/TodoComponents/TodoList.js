@@ -1,12 +1,9 @@
 import React from "react"
-import Todo from './Todo';
 
 const TodoList = props =>{
     return(
         <div>
-            {
-              <h3>{props.todoList.newTodo}</h3>
-            }
+              <h4>{props.todoProp.newTodo}</h4>
         </div>
     )
 }
