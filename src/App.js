@@ -1,18 +1,7 @@
 import React from 'react';
 
 import TodoList from './components/TodoComponents/TodoList';
-
-const todo = [
-  {todo:'eat',
-   id:12341245,
-   completed:false
-  },
-  {
-    todo:'sleep',
-   id:123245,
-   completed:false
-  }
-]
+import TodoForm from './components/TodoComponents/TodoForm';
 
 
 class App extends React.Component {
@@ -22,23 +11,39 @@ class App extends React.Component {
   constructor(){
     super();
     this.state={
-      todoList: todo,
-      task:'',
-      id:'',
-      completed: false
+      todo:[
+
+      ],
     }
   }
 
   handleChange = event =>{
     console.log(event.target)
-    this.setState({[event.target.todo]: event.target.value})
+    this.setState({task: event.target.value})
   }
+
+updateTodo = event =>{
+  event.preventDefault();
+
+  
+
+  this.state({ })
+}
+ 
 
   render() {
     return (
       <div>
         <h2>ToDo List</h2>
-        <TodoList />
+
+        <TodoList 
+          todoList={this.state.todo} 
+        />
+
+        <TodoForm 
+          handleChange={this.handleChange} 
+          updateTodo={this.updateTodo}
+          />
       </div>
     );
   }

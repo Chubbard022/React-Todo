@@ -9,8 +9,6 @@ const TodoList = props =>{
                 <Todo key={todo.id} todoData={todo} />
                 })
             }
-        {/* <Todo />
-        <TodoForm /> */}
         </div>
     )
 }
