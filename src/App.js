@@ -34,19 +34,6 @@ class App extends React.Component {
     this.setState({[event.target.todo]: event.target.value})
   }
 
-  updateList = event =>{
-    event.preventDefault();
-    const newTodo = {
-      todo:this.state.todo,
-      id:this.Date(),
-      completed: false
-    }
-    this.setState({
-      todoList: [...this.state.todoList, newTodo]
-    })
-  }
-  
-
   render() {
     return (
       <div>

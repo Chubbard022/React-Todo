@@ -1,13 +1,16 @@
-import Todo from './Todo';
-import TodoForm from './TodoForm';
-
 import React from "react"
+import Todo from './Todo';
 
 const TodoList = props =>{
     return(
         <div>
-        <Todo />
-        <TodoForm />
+            {
+                props.todoList.map(todo=>{
+                <Todo key={todo.id} todoData={todo} />
+                })
+            }
+        {/* <Todo />
+        <TodoForm /> */}
         </div>
     )
 }

@@ -2,9 +2,9 @@ import React from 'react';
 
 const Todo = props =>{
     return(
-        <div>
-            Hello from Todo
-        </div>
+        <p>
+            {props.todo.task}
+        </p>
     )
 }
 
