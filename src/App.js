@@ -14,6 +14,8 @@ class App extends React.Component {
       todo:[
 
       ],
+
+      newTodo:'',
     }
   }
 
@@ -25,9 +27,16 @@ class App extends React.Component {
 updateTodo = event =>{
   event.preventDefault();
 
+  const newTodo = [
+    ...this.state.todo,
+    { task:this.state.newTodo, id:Date.now(), completed:false } 
+  ]
   
 
-  this.state({ })
+  this.state({ 
+    todo:newTodo,
+    newTodo:''
+  })
 }
  
 
@@ -42,6 +51,7 @@ updateTodo = event =>{
 
         <TodoForm 
           handleChange={this.handleChange} 
+          newTodo={this.state.newTodo}
           updateTodo={this.updateTodo}
           />
       </div>
