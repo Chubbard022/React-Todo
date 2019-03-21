@@ -1,18 +1,21 @@
 import React from "react";
 
-const TodoForm = props =>{
-    return(
-        <form>
-            <input 
-                type='text'
-                placeholder='...todo'
-                name='newTodo'
-                value={props.newTodo}
-                onChange={props.handleChange}
-            />
-            <button onClick={props.updateTodo}>Add Todo</button>
-        </form>
-    )
-}
+const TodoForm = props => {
+  return (
+    <React.Fragment>
+      <form>
+        <input
+          type="text"
+          task="task"
+          value={props.handleChanges}
+          placeholder="add Task"
+          onChange={props.changeTodo}
+        />
+      </form>
+      <button onClick={props.updateTodo}>Add Todo</button>
+      <button>Delete Todo</button>
+    </React.Fragment>
+  );
+};
 
 export default TodoForm;

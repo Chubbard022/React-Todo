@@ -1,11 +1,14 @@
-import React from "react"
+import React from "react";
+import Todo from "./Todo";
 
-const TodoList = props =>{
-    return(
-        <div>
-              <h4>{props.todoProp.newTodo}</h4>
-        </div>
-    )
-}
+const TodoList = props => {
+  return (
+    <React.Fragment>
+      {props.todoListArray.map((todoItem, index) => {
+        return <Todo todo={todoItem} key={index} />;
+      })}
+    </React.Fragment>
+  );
+};
 
 export default TodoList;
