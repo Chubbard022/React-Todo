@@ -24,11 +24,12 @@ class App extends React.Component {
       task: ""
     };
   }
-
+  //this function gets the value from input and sets the task to that value
   handleChanges = event => {
     this.setState({ task: event.target.value });
   };
 
+  //this function gets the value passed in from input and adds it to the existing array of todo items
   updateTodoList = event => {
     event.preventDefault();
 
@@ -43,14 +44,42 @@ class App extends React.Component {
     });
   };
 
+  //this function allows you to toggle items that have been completed by clicking on them
+  toggleItem = id => {
+    //console.log(this.state.todoArray[0].id);
+
+    const newTodoArray = [...this.state.todoArray];
+
+    const mappedTodoArray = newTodoArray.map(todoItem => {
+      if (todoItem.id === id) {
+        todoItem.completed = !todoItem.completed;
+        return todoItem;
+      } else {
+        return todoItem;
+      }
+    });
+    this.setState({ todoArray: mappedTodoArray });
+  };
+
+  //this function will return the array of todo items that have not been completed
+  // clearTodoList = () => {
+  //   let completed = this.state.todoArray.filter(todoItem => {
+  //     return !todoItem.completed;
+  //   });
+  // };
+
   render() {
     return (
       <div className="app">
         <h1 className="title">Add a Todo to the list!</h1>
-        <TodoList todoListArray={this.state.todoArray} />
+        <TodoList
+          todoListArray={this.state.todoArray}
+          toggleItem={this.toggleItem}
+        />
         <TodoForm
           changeTodo={this.handleChanges}
           updateTodo={this.updateTodoList}
+          clearTodoList={this.clearTodoList}
         />
       </div>
     );

@@ -49,6 +49,10 @@
     background-color: rgb(86, 228, 197);
     font-family: sans-serif;
   }
+  .task.completed {
+    text-decoration: line-through;
+    background-color: rgb(44, 78, 105);
+  }
   body {
     background-color: rgb(66, 66, 161);
   }

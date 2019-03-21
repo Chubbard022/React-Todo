@@ -16,7 +16,9 @@ const TodoForm = props => {
       <button className="button add" onClick={props.updateTodo}>
         Add Todo
       </button>
-      <button className="button delete">Delete Todo</button>
+      <button className="button delete" onClick={props.clearTodoList}>
+        Delete Todo
+      </button>
     </React.Fragment>
   );
 };
