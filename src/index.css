@@ -55,5 +55,7 @@
   }
   body {
     background-color: rgb(66, 66, 161);
+    max-width: 800px;
+    margin: 0 auto;
   }
   
