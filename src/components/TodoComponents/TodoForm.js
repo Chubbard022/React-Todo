@@ -3,17 +3,20 @@ import React from "react";
 const TodoForm = props => {
   return (
     <React.Fragment>
-      <form>
+      <form className="form">
         <input
+          className="input"
           type="text"
           task="task"
-          value={props.handleChanges}
+          value={props.task}
           placeholder="add Task"
           onChange={props.changeTodo}
         />
       </form>
-      <button onClick={props.updateTodo}>Add Todo</button>
-      <button>Delete Todo</button>
+      <button className="button add" onClick={props.updateTodo}>
+        Add Todo
+      </button>
+      <button className="button delete">Delete Todo</button>
     </React.Fragment>
   );
 };

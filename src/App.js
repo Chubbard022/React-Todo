@@ -1,6 +1,7 @@
 import React from "react";
 import TodoForm from "./components/TodoComponents/TodoForm";
 import TodoList from "./components/TodoComponents/TodoList";
+import "./index.css";
 
 const todoData = [
   {
@@ -44,8 +45,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Add a Todo to the list!</h1>
+      <div className="app">
+        <h1 className="title">Add a Todo to the list!</h1>
         <TodoList todoListArray={this.state.todoArray} />
         <TodoForm
           changeTodo={this.handleChanges}
