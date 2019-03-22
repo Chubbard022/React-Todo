@@ -1,0 +1,61 @@
+.app {
+    border: 2px solid black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .title {
+    border: 1px solid rgb(131, 145, 153);
+    text-align: center;
+    background-color: rgb(131, 145, 153);
+    padding: 5px;
+    color: white;
+    border-radius: 10px;
+  }
+  .form {
+    border: 1px solid rgb(131, 145, 153);
+    border-radius: 10px;
+    padding: 3px;
+    background-color: rgb(131, 145, 153);
+    text-align: center;
+  }
+  .input {
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+  .button {
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 15px;
+    font-family: sans-serif;
+  }
+  .button.add:hover {
+    background-color: rgb(25, 160, 25);
+    color: white;
+  }
+  .button.delete:hover {
+    background-color: rgb(175, 25, 25);
+    color: white;
+  }
+  .task {
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgb(86, 228, 197);
+    font-family: sans-serif;
+  }
+  .task.completed {
+    text-decoration: line-through;
+    background-color: rgb(44, 78, 105);
+  }
+  body {
+    background-color: rgb(66, 66, 161);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
