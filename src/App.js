@@ -62,11 +62,12 @@ class App extends React.Component {
   };
 
   //this function will return the array of todo items that have not been completed
-  // clearTodoList = () => {
-  //   let completed = this.state.todoArray.filter(todoItem => {
-  //     return !todoItem.completed;
-  //   });
-  // };
+  clearTodoList = (event) => {
+    event.preventDefault();
+
+    const filterTodo = this.state.todoArray.filter(todoItem=> todoItem.completed === false)
+    this.setState({todoArray:filterTodo})
+  };
 
   render() {
     return (
